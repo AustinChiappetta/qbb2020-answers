@@ -1,0 +1,11 @@
+2a) 
+1091 kmers occur 50 times
+
+2b)
+see top10_kmers.txt
+
+2c)
+estimated min genome length is 233,469 bp, estimated max genome length is 233,805 bp
+
+2d)
+estimated max genome length is only one bp off from actual ref genome length
