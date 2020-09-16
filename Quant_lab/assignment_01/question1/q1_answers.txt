@@ -1,0 +1,7 @@
+a) Ref genome is 233806 bp long
+b) file: frag180.1.fq, 35178 reads, length 100 bp
+file: frag180.2.fq, 35178 reads, length 100 bp
+file: jump2k.1.fq, 70355 reads, length 50 bp
+file: jump2k.2.fq, 70355 reads, length 50 bp
+c) 60x coverage
+d) see .png files

@@ -1,0 +1,13 @@
+1a)
+samtools faidx asm/ref.fa
+cat asm/ref.fa.fai
+
+1b)
+fastqc asm/*fq
+then opened each output file using open filename.html
+
+1c)
+echo $((((35178 * 2 * 100)+(70355 * 2 * 50))/233806))x coverage
+
+1d)
+opened each file in fastqc and looked at "per base sequence quality" tab for each
