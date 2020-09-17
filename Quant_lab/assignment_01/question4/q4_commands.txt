@@ -1,0 +1,9 @@
+4a)
+dnadiff ../ref.fa ../assembly/contigs.fasta
+
+4b)
+show-coords -l out.delta > alignment_coords.out
+show-coords -l out.delta | tail -n 5 | sort -k 7 -n -r | head -n 1 | awk '{print longest alignment is:, $7, bp}' >> ../../question4/q4_answers.txt
+
+4c)
+read the answer from out.report

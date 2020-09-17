@@ -1,0 +1,8 @@
+4a)
+average identify is 100% based on out.report
+
+4b)
+longest alignment is: 105831 bp
+
+4c)
+number of indels is 6
