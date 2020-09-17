@@ -1,7 +1,7 @@
 2a)
 cat ../asm/*.fq > combined_reads.fq
 jellyfish count -m 21 -s 100M -t 10 -C ../asm/combined_reads.fq
-jellyfish histo mer_counts.jf | grep "^50" | awk {print , kmers occur 50 times} >> q2_answers.txt
+jellyfish histo mer_counts.jf | grep "^50" | awk '{print $2, "kmers occur 50 times"}' >> q2_answers.txt
 
 2b)
 jellyfish dump -ct mer_counts.jf | sort -k 2 -n -r | head -n 10 > top10_kmers.txt
