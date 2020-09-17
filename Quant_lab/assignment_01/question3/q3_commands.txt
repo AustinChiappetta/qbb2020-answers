@@ -1,0 +1,12 @@
+3a)
+spades.py --pe1-1 frag180.1.fq --pe1-2 frag180.2.fq --mp1-1 jump2k.1.fq --mp1-2 jump2k.2.fq -o asm -t 4 -k 31
+grep -c '>' asm/assembly/contigs.fasta | awk '{print $1, contigs}' >> question3/q3_answers.txt
+
+3b)
+cat asm/assembly/contigs.fasta.fai | awk '{total += $2} END {print Total:, total, bps}' >> question3/q3_answers.txt
+
+3c)
+cat asm/assembly/contigs.fasta.fai | sort -k 2 -n -r | head -n 1 | awk '{print size of largest contig:, $2, bps}' >> question3/q3_answers.txt
+
+3d)
+python calcN50.py /Users/cmdb/qbb2020-answers/Quant_lab/assignment_01/asm/ref.fa.fai /Users/cmdb/qbb2020-answers/Quant_lab/assignment_01/asm/assembly/contigs.fasta.fai >> q3_answers.txt

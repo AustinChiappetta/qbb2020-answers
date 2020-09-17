@@ -1,0 +1,11 @@
+3a)
+4 contigs
+
+3b)
+Total: 234467 bps
+
+3c)
+size of largest contig: 105831 bps
+
+3d)
+47861
