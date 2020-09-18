@@ -1,0 +1,11 @@
+Step 1)
+bwa index sacCer3.fa
+
+Step 2)
+./alignment_script_sep_files.sh
+
+Step 3)
+./sort_script.sh
+
+Step 4)
+freebayes -f ../ref_yeast/sacCer3.fa -p 1 --genotype-qualities  ../alignment/bams/* > var.vcf
