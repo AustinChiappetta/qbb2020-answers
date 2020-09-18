@@ -1,0 +1,11 @@
+5a)
+cat asm/WGA/alignment_coords.out
+
+5b)
+echo $((14565 - 13854 + 1))bp long insertion >> q5_answers.txt
+
+5c)
+samtools faidx asm/assembly/contigs.fasta NODE_3_length_41352_cov_20.588756:13854-14566 > question5/insertion.fa
+
+5d)
+python ported_decoder.py --decode --input insertion.fa --rev_comp
