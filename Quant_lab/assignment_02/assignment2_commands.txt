@@ -18,4 +18,4 @@ vcfallelicprimitives -k -g results.vcf > decomposed.results.vcf
 
 Step 7)
 snpeff download R64-1-1.86
-snpeff ann -lof R64-1-1.86 decomposed.results.vcf > annotated.vcf
+snpeff ann R64-1-1.86 decomposed.results.vcf > annotated.vcf
