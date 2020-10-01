@@ -3,3 +3,4 @@ bash chr_relabel.sh
 plink --vcf renum_chr.vcf --pca 'tabs' --mind
 
 Step 2)
+plink --vcf renum_chr.vcf --freq
