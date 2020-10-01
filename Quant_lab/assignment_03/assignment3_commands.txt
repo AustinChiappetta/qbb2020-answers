@@ -4,3 +4,7 @@ plink --vcf renum_chr.vcf --pca 'tabs' --mind
 
 Step 2)
 plink --vcf renum_chr.vcf --freq
+
+Step 3)
+bash pheno_relabel.sh
+plink   --vcf /Users/cmdb/qbb2020-answers/Quant_lab/assignment_03/data/renum_chr.vcf   --pheno /Users/cmdb/qbb2020-answers/Quant_lab/assignment_03/data/PhenoData.relabeled.txt   --linear   --allow-no-sex   --covar plink.eigenvec   --covar-number 1-10
