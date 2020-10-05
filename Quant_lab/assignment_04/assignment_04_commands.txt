@@ -1,3 +1,6 @@
 Step 2)
 transeq -sequence seqdump.txt -snucleotide1 1 -sformat1 fasta -osformat2 fasta
 mafft --auto ay532665.pep > aligned_aa_seqs.fa
+
+Step 3)
+python protein_guided_aligner.py seqdump.txt aligned_aa_seqs.fa > aligned_DNA_seqs.fa
