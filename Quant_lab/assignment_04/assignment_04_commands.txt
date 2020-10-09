@@ -4,3 +4,7 @@ mafft --auto ay532665.pep > aligned_aa_seqs.fa
 
 Step 3)
 python protein_guided_aligner.py seqdump.txt aligned_aa_seqs.fa > aligned_DNA_seqs.fa
+
+Step 4)
+python dS_dN_calculator.py aligned_DNA_seqs.fa
+python plotting.py

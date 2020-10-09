@@ -58,7 +58,7 @@ def aa_guided_nuc_aligner(parsed_DNA, parsed_aa):
 		ID = seq_tuple[0]
 		sequence = seq_tuple[1]
 		#print(ID + '\n')
-		print(ID)
+		print('>' + ID)
 		while len(sequence) > 60:
 			#print(sequence[:60] + '\n')
 			print(sequence[:60])
