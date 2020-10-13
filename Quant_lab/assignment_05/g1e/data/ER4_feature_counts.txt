@@ -1,0 +1,3 @@
+ 101 exon
+ 341 intron
+  67 promoter

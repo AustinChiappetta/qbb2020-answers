@@ -1,0 +1,28 @@
+Part 1)
+bowtie2-build bowtie_index/chr19.fa bowtie_index/chr19
+for sample in CTCF_ER4 CTCF_G1E input_ER4 input_G1E
+> do
+> bowtie2 -x bowtie_index/chr19 -U ${sample}.fastq -S ${sample}.sam -p 6
+> samtools view -bSo ${sample}.bam ${sample}.sam
+> samtools sort ${sample}.bam -o ${sample}.sorted.bam
+> samtools index ${sample}.sorted.bam
+> done
+
+Calling Peaks:
+macs2 callpeak -t data/CTCF_ER4.bam -c data/input_ER4.bam --format=BAM --name=ER4 --gsize=61000000 --outdir ER4_peaks_data
+macs2 callpeak -t data/CTCF_G1E.bam -c data/input_G1E.bam --format=BAM --name=G1E --gsize=61000000 --outdir G1E_peaks_data
+
+Differential Binding:
+bedtools intersect -a ER4_peaks_data/ER4_peaks.narrowPeak -b G1E_peaks_data/G1E_peaks.narrowPeak -v > CTCF_sites_gained.bed
+bedtools intersect -a G1E_peaks_data/G1E_peaks.narrowPeak -b ER4_peaks_data/ER4_peaks.narrowPeak -v > CTCF_sites_lost.bed
+
+Feature Overlapping:
+bedtools intersect -a Mus_musculus.GRCm38.94_features.bed -b G1E_peaks_data/G1E_peaks.narrowPeak > features_CTCF_sites_G1E.bed
+bedtools intersect -a Mus_musculus.GRCm38.94_features.bed -b ER4_peaks_data/ER4_peaks.narrowPeak > features_CTCF_sites_ER4.bed
+cat features_CTCF_sites_G1E.bed | awk '{print }' | sort | uniq -c > G1E_feature_counts.txt
+cat features_CTCF_sites_ER4.bed | awk '{print }' | sort | uniq -c > ER4_feature_counts.txt
+wc -l CTCF_sites_lost.bed | awk '{print }' > CTCF_sites_lost_count.txt
+wc -l CTCF_sites_gained.bed | awk '{print }' > CTCF_sites_gained_count.txt
+
+Plotting:
+python G1E_ER4_plotting.py
