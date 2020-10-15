@@ -26,3 +26,8 @@ wc -l CTCF_sites_gained.bed | awk '{print }' > CTCF_sites_gained_count.txt
 
 Plotting:
 python G1E_ER4_plotting.py
+
+Part 2)
+sort -r  -h -k 9 ER4_peaks.narrowPeak | head -n 100 > ER4_peaks.mostsig
+bedtools getfasta -name -fo ER4_peaks_data/ER4_peaks.mostsig.fa -fi ../bowtie_index/chr19.fa -bed ER4_peaks_data/ER4_peaks.mostsig
+meme-chip -meme-maxw 20 -oc meme_data -db motif_databases/JASPAR/JASPAR_CORE_2016.meme ER4_peaks_data/ER4_peaks.mostsig.fa
