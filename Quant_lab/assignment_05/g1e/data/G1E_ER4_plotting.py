@@ -91,7 +91,7 @@ def CTCF_plots():
 	ax[1].legend()
 
 	fig.tight_layout()
-	plt.show()
+	#plt.show()
 	plt.savefig('G1E_ER4.png')
 
 
