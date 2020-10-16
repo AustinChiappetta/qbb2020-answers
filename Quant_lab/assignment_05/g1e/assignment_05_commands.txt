@@ -19,10 +19,10 @@ bedtools intersect -a G1E_peaks_data/G1E_peaks.narrowPeak -b ER4_peaks_data/ER4_
 Feature Overlapping:
 bedtools intersect -a Mus_musculus.GRCm38.94_features.bed -b G1E_peaks_data/G1E_peaks.narrowPeak > features_CTCF_sites_G1E.bed
 bedtools intersect -a Mus_musculus.GRCm38.94_features.bed -b ER4_peaks_data/ER4_peaks.narrowPeak > features_CTCF_sites_ER4.bed
-cat features_CTCF_sites_G1E.bed | awk '{print }' | sort | uniq -c > G1E_feature_counts.txt
-cat features_CTCF_sites_ER4.bed | awk '{print }' | sort | uniq -c > ER4_feature_counts.txt
-wc -l CTCF_sites_lost.bed | awk '{print }' > CTCF_sites_lost_count.txt
-wc -l CTCF_sites_gained.bed | awk '{print }' > CTCF_sites_gained_count.txt
+cat features_CTCF_sites_G1E.bed | awk '{print $4}' | sort | uniq -c > G1E_feature_counts.txt
+cat features_CTCF_sites_ER4.bed | awk '{print $4}' | sort | uniq -c > ER4_feature_counts.txt
+wc -l CTCF_sites_lost.bed | awk '{print $1}' > CTCF_sites_lost_count.txt
+wc -l CTCF_sites_gained.bed | awk '{print $1}' > CTCF_sites_gained_count.txt
 
 Plotting:
 python G1E_ER4_plotting.py
