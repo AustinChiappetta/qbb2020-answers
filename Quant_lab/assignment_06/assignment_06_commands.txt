@@ -1,0 +1,14 @@
+mv SRR3083926_1.chr6.fastq ./E4.0ICM_rep1_1_STEMseq.chr6.fastq
+mv SRR3083926_2.chr6.fastq ./E4.0ICM_rep1_2_STEMseq.chr6.fastq
+mv SRR3083929_1.chr6.fastq ./E5.5Epi_rep1_1_STEMseq.ch6.fastq
+mv SRR3083929_2.chr6.fastq ./E5.5Epi_rep1_2_STEMseq.ch6.fastq
+bismark -o ../data/ --genome ../mm10/ -1 E4.0ICM_rep1_1_STEMseq.chr6.fastq -2 E4.0ICM_rep1_2_STEMseq.chr6.fastq
+bismark -o ../data/ --genome ../mm10/ -1 E5.5Epi_rep1_1_STEMseq.ch6.fastq -2 E5.5Epi_rep1_2_STEMseq.ch6.fastq
+samtools sort -o data/E4.bismark.sorted.bam data/E4.0ICM_rep1_1_STEMseq.chr6_bismark_bt2_pe.bam
+samtools sort -o data/E5.5.bismark.sorted.bam data/E5.5Epi_rep1_1_STEMseq.ch6_bismark_bt2_pe.bam
+samtools index data/E4.bismark.sorted.bam
+samtools index data/E5.5.bismark.sorted.bam
+bismark_methylation_extractor --bedgraph --comprehensive -p E4.0ICM_rep1_1_STEMseq.chr6_bismark_bt2_pe.bam
+bismark_methylation_extractor --bedgraph --comprehensive -p E5.5Epi_rep1_1_STEMseq.ch6_bismark_bt2_pe.bam
+sort -k 5 mm10_refseq_genes_chr6_50M_60M.bed > mm10_refseq_genes_chr6_50M_60M.sorted.bed
+python methylation_enrichment_calc.py
