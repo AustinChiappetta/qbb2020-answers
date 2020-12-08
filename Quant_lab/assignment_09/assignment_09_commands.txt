@@ -11,9 +11,10 @@ Compartment Analysis:
 python2 hic_compartment_analysis.py
 awk ' $4 > 0 ' hic_comp.bed > pos_comp.bed
 awk ' $4 < 0 ' hic_comp.bed > neg_comp.bed
-bedtools intersect -u -a data/WT_fpkm.bed -b pos_comp.bed > pos_genes_fpkm.bed
-bedtools intersect -u -a data/WT_fpkm.bed -b neg_comp.bed > neg_genes_fpkm.bed
+bedtools intersect -u -f 0.5 -wa -a data/WT_fpkm.bed -b pos_comp.bed > pos_genes_fpkm.bed
+bedtools intersect -u -f 0.5 -wa -a data/WT_fpkm.bed -b neg_comp.bed > neg_genes_fpkm.bed
 python2 compartment_expression_plotter.py
 
 Expression vs Repression:
 python2 expression_repression.py
+

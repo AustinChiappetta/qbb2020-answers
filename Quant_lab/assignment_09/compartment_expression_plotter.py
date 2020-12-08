@@ -30,13 +30,20 @@ for line in fs:
 	neg_compartment_fpkms += [fpkm]
 fs.close()
 
+#Add 1 to every entry and log2 transform the data
+pos_compartment_fpkms = [x + 1 for x in pos_compartment_fpkms]
+pos_compartment_fpkms = [np.log2(x) for x in pos_compartment_fpkms]
+
+neg_compartment_fpkms = [x + 1 for x in neg_compartment_fpkms]
+neg_compartment_fpkms = [np.log2(x) for x in neg_compartment_fpkms]
+
 
 #now make violin plots
 fig, ax = plt.subplots()
 ax.set_title("Expression by compartment")
-ax.set_ylabel("FPKM")
-ax.set_yscale('log')
-labels = ['Pos compartment scores\nB compartment (lower expression)', 'Neg compartment scores\nA compartment (higher expression)']
+ax.set_ylabel("log2(FPKM)")
+#ax.set_yscale('log')
+labels = ['Pos compartment scores\nA compartment (higher expression)', 'Neg compartment scores\nB compartment (lower expression)']
 ax.set_xticks(np.arange(1, len(labels) + 1))
 ax.set_xticklabels(labels)
 ax.violinplot([pos_compartment_fpkms, neg_compartment_fpkms])
