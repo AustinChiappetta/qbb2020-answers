@@ -1,0 +1,41 @@
+Question 1:
+Q: Briefly comment on the trends you see in the gut microbiota throughout the first week.
+A: On the first day, the metagenome is dominated by strains of Enterococcus faecalis, though Staphylococcus and Cutibacterium species are also present. The proportions of Staphylococcus and Cutibacterium sharply decrease on day 2, and are gradually restored throughout the rest of the week. This observed trend may be due to the antibiotic treatment given to the infant on days 1 and 2.
+
+Question 2:
+Q: What metrics in the contigs can we use to group them together?
+A: Metrics such as GC content, codon usage, and coverage can be used to group the contigs together.
+
+Question 3A:
+Q: How many bins did you get?
+A: 6 bins
+
+Question 3B:
+Q: Roughly what percentage of the assembly do they represent?
+A: According to wc -m, the bins contain 13,428,787 characters. The assembly contains 38,856,945 characters. So rough estimate is that the bins represent about 34% of the assembly.
+
+Question 3C:
+Q: Do you think the sizes of each bin look about right, based on what you know about the size of prokaryotic genomes?
+A: The bin sizes range from about 1.2 - 2.9 Mbp. Given that the average prokaryotic genome size is ~3.9 Mbp, these bins seem small.
+
+Question 3D:
+Q: How would you estimate how complete and how contaminated each bin is?
+A: Completeness: compare the size of the bin with the known genome size. Contamination: could align the bins to their corresponding genome and assess the alignment percentage (if contamination is low, alignment percentage should be high).
+
+Question 4A:
+Q: What are your predictions for each bin?
+A:
+
+Question 4B:
+Q: This approach to classification is fast, but not very quantitative. Propose one method to more robustly infer the taxonomy of a metagenomic bin.
+A:
+
+Question 5:
+Q: Compare the results of the individual genome abundance analysis to the conclusions your derived from looking at the read taxonomy distributions (from Step 1). Do they agree with one another? What is different?
+A:
+
+
+
+
+
+
