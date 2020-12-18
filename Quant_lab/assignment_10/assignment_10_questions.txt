@@ -40,7 +40,7 @@ A: A more quantitative approach to taxonomic annotation could involve using hous
 
 Question 5:
 Q: Compare the results of the individual genome abundance analysis to the conclusions your derived from looking at the read taxonomy distributions (from Step 1). Do they agree with one another? What is different?
-A:
+A: The results seem pretty similar, as they both  show Cutibacterium and Staphylococcus decreasing on the second day, then gradually increasing throughout the week. The heatmap shows that Enterococcus faecalis abundance decreases from days 2-5, then increases again, whereas the Krona chart shows Enterococcus faecalis abundances dropping from days 5-8.
 
 
 
