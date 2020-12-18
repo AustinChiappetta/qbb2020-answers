@@ -24,11 +24,19 @@ A: Completeness: compare the size of the bin with the known genome size. Contami
 
 Question 4A:
 Q: What are your predictions for each bin?
-A:
+A: Classifying the bins by most common taxa in each bin:
+Bin 1: Staphylococcus haemolyticus
+Bin 2: Leuconostoc citreum
+Bin 3: Staphylococcus lugdunensis
+Bin 4: Enterococcus faecalis
+Bin 5: Cutibacterium avidum
+Bin 6: Staphylococcus epidermidis
+Bin 7: Staphylococcus aureus
+Bin 8: Anaerococcus prevotii
 
 Question 4B:
 Q: This approach to classification is fast, but not very quantitative. Propose one method to more robustly infer the taxonomy of a metagenomic bin.
-A:
+A: A more quantitative approach to taxonomic annotation could involve using housekeeping gene sequences such as 16S rRNA from the bins and performing BLAST searches or calculating where the sequences fit in a phylogenetic tree
 
 Question 5:
 Q: Compare the results of the individual genome abundance analysis to the conclusions your derived from looking at the read taxonomy distributions (from Step 1). Do they agree with one another? What is different?

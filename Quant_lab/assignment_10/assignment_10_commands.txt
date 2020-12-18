@@ -1,0 +1,17 @@
+Step 1)
+python kraken_parser.py /Users/cmdb/qbb2020-answers/Quant_lab/assignment_10/week13_data/KRAKEN/SRR*.kraken
+ktImportText -o charts.krona.html /Users/cmdb/qbb2020-answers/Quant_lab/assignment_10/week13_data/KRAKEN/parsed_files/*
+
+Step 2)
+bwa index assembly.fasta
+bash alignment_and_sort.sh
+gzip -k assembly.fasta
+jgi_summarize_bam_contig_depths --outputDepth depth.txt *sorted.bam
+metabat2 -i /Users/cmdb/qbb2020-answers/Quant_lab/assignment_10/week13_data/assembly.fasta.gz -a assembly.fasta.gz.depth.txt -o bins_dir/bin -v
+
+Step 3)
+bash get_nodes.sh
+bash get_taxa.sh
+python taxonomy_estimator.py *.taxa
+bash parsed_taxa_sorter.sh
+head -n 5 *.sorted > most_abundant_taxa_by_bin.txt
